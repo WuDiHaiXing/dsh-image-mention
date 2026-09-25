@@ -1,0 +1,41 @@
+{
+  "name": "dsh-image-mention",
+  "version": "0.1.0",
+  "description": "DSH Web 插件：把刚上传的图片带序号和文件名 @ 进对话，模型能分清\"第几张\"；点击引用块可全屏预览原图。纯客户端、零依赖、零配置。",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib/",
+    "cordis.patch.yml",
+    "README.md",
+    "INSTALL.md"
+  ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "image",
+    "mention",
+    "attachment",
+    "web"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web"
+    }
+  }
+}

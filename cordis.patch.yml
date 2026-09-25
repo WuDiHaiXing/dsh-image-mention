@@ -1,0 +1,20 @@
+# dsh-image-mention — bundle patch layer.
+#
+# This layer is applied AFTER every platform bundle layer (base, web-app).
+# It holds exactly ONE top-level `insert` of exactly ONE row, and nothing else:
+#
+#   * the patch entry carries NO `id:` of its own, so the row is APPENDED to the
+#     top-level entry list (`applyEntryPatches` -> `data.push(...insert)`) and can
+#     never be merged into, or override, an existing row;
+#   * no `config:` and no second entry, so this layer cannot touch platform config;
+#   * row id === row name === package name === "dsh-image-mention".  The loader
+#     entry id is one global namespace and an npm package name is globally unique,
+#     so this row cannot collide with a platform row.  Verified mechanically by
+#     tools/verify-dump.mjs, which fails when the composed config gains a duplicate id.
+#
+# DO NOT copy the dsh-file-upload@0.4.3 shape: its insert reused the platform row id
+# `file-upload` (the host `fileUploads` service provider row), silently replaced it,
+# and left `session-controller` pending on `fileUploads` forever.
+- insert:
+    - id: dsh-image-mention
+      name: dsh-image-mention
