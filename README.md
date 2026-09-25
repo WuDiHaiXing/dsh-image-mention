@@ -4,6 +4,7 @@
 > Mention the images you just attached, by name and by ordinal.
 
 DSH（DeepSeek Harness）Web 端的一个微型插件。
+仓库：<https://github.com/WuDiHaiXing/dsh-image-mention>
 
 贴了图之后，在输入框里打 `@`，菜单里会多出一组**本轮图片**（缩略图 + 文件名 + 尺寸）：
 
@@ -40,7 +41,7 @@ DSH（DeepSeek Harness）Web 端的一个微型插件。
 
 ```bash
 # 从 GitHub 直装（不需要 npm 账号）
-dsh plugin --profile <你的 profile> add github:<你>/dsh-image-mention
+dsh plugin --profile <你的 profile> add github:WuDiHaiXing/dsh-image-mention
 ```
 
 也可以**零安装热挂载**（不改任何包，只往 profile 的 `cordis.patch.yml` 追加 3 行），

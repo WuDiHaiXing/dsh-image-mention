@@ -26,8 +26,8 @@
 
 ```bash
 dsh plugin --profile <你的 profile> add file:<这个目录的绝对路径>
-# 或从 GitHub 装：
-dsh plugin --profile <你的 profile> add github:<你的账号>/<仓库名>
+# 或从 GitHub 装（仓库：https://github.com/WuDiHaiXing/dsh-image-mention）：
+dsh plugin --profile <你的 profile> add github:WuDiHaiXing/dsh-image-mention
 ```
 
 命令会把包名写进该 profile `package.json` 的 `dsh.profile.bundles`（若没有，
